@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Lucas Queiroz da Silva">
+        <meta name="description" content="A web client for an IoT garden">
+        <link rel="icon" href="../img/icon/plant.png" type=image/x-icon">
+	<title>Plant stats set</title>
+	<link rel="stylesheet" href="../css/myNavBar.css" type="text/css">
+	<link rel="stylesheet" href="../css/statsCad.css" type="text/css">
+    </head>
+    <body>
+	    <header>
+		    <div id="myNavBar">
+		    </div>
+	    </header>
+	    <main>
+		    <div id="form">
+			    <div>
+				    <label for="mdry">Min moisture level: </label><br>
+				    <input type="text" id="mdry" name="mdry"><br>
+				    <label for="mwet">Max moisture level: </label><br>
+				    <input type="text" id="mwet" name="mwet"><br>
+			    </div>
+			    <div>
+				    <label for="cetemp">Min external temperature: </label><br>
+				    <input type="text" id="cetemp" name="cetemp"><br>
+				    <label for="hetemp">Max external temperature: </label><br>
+				    <input type="text" id="hetemp" name="hetemp"><br>
+			    </div>
+			    <div>
+				    <label for="citemp">Min internal temperature: </label><br>
+				    <input type="text" id="citemp" name="citemp"><br>
+				    <label for="hitemp">Max internal temperature: </label><br>
+				    <input type="text" id="hitemp" name="hitemp"><br><br>
+			    </div>
+			    <div>
+				    <label for="pid">plantId</label><br>
+				    <select id="pid" name="pid">
+				    </select><br>
+				    <button id="sendData">Save Config</button>
+				    <div id="errorMessage"><br>
+			    </div>
+			    </div>
+		    </div>
+	    </main>
+	    <footer>
+		    <ul>
+			    <li>Contact me at <a href="mailto:lucasqueirozdbv@gmail.com">My Email address</a></li>
+		    </ul>
+	    </footer>
+	    <script src="../js/loggedNavBar.js"></script>
+	    <script src="../js/statsCad.js"></script>
+	    <script src="../js/newESP.js"></script>
+    </body>
+</htmL>

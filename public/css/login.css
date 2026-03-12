@@ -1,0 +1,39 @@
+body {
+    font-family: system-ui;
+    padding: 5px;
+    background: #402E2A;
+    color: #9CD08F
+}
+
+h1 {
+    background: #684551;
+    border-radius: 7px
+}
+
+form {
+    border: 2px dashed #684551;
+    border-radius: 10px;
+    padding-left:10px;
+    width: 20%
+}
+
+input[type=text], input[type=password] {
+    border: 2px solid #684551;
+    border-radius: 10px
+}
+
+footer ul {
+    list-style-type: none;
+    border: 7px dashed #684551;
+    border-radius: 10px;
+    padding-left: 10px
+}
+
+footer ul li a:link {
+    color: #D5B0AC;
+}
+
+footer ul li a:visited {
+    color: #684551;
+    font-weight: bold
+}

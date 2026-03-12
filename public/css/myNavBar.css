@@ -1,0 +1,25 @@
+
+header {
+    position: sticky;
+}
+#myNavBar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #CEA0AE;
+    display: flex;
+    border-radius: 25px
+}
+
+#myNavBar ul li a {
+    display: block;
+    color: #402E2A;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#myNavBar nav ul li a:hover {
+    border-radius: 25px;
+    background-color: #684551
+}

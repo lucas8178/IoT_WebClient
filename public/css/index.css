@@ -1,0 +1,47 @@
+body {
+    font-family: system-ui;
+    padding: 5px;
+    background: #402E2A;
+    color: #9CD08F
+}
+
+h1 {
+    background: #684551;
+    border-radius: 7px;
+}
+
+#postImg {
+    height: 300px;
+    border-radius: 7px
+}
+
+#about {
+    display: flex
+}
+
+#message {
+    border: 7px dashed #684551;
+    border-radius: 10px;
+    padding-left: 10px;
+    width: 60%
+}
+
+#articles {
+    width: 40%
+}
+
+footer ul {
+    list-style-type: none;
+    border: 7px dashed #684551;
+    border-radius: 10px;
+    padding-left: 10px
+}
+
+footer ul li a:link {
+    color: #D5B0AC
+}
+
+footer ul li a:visited {
+    color: #684551;
+    font-weight: bold
+}
