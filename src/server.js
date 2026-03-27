@@ -116,6 +116,13 @@ app.post('/createPlant', isAuthenticated, async (req, res) => {
     res.json(result);
 });
 
+app.post('/editPlant', isAuthenticated, async (req, res) => {
+    let data = req.body;
+    let newPlant = new Plants();
+    let result = await newPlant.editPlants(data.name, data.image, data.description, data.plantId, req.session.user.id);
+
+    res.json(result);
+});
 
 //this route is used to get the user data when its needed
 app.get('/getUserData', isAuthenticated, async (req, res) => {
@@ -137,6 +144,7 @@ app.get('/configure', isAuthenticated, async (req, res) => {
 app.get('/getPlantsData', isAuthenticated, async (req, res) => {
 	let plant = new Plants(null, '', '' , '',  false, req.session.user.id);
 	let data = await plant.findUserPlants();
+    console.log(data.state);
 	res.json(data);
 });
 
@@ -145,6 +153,13 @@ app.post('/saveSensorsData', isAuthenticated, async (req, res) => {
 	let data = req.body;
 	let sensors = new Sensors(data.plantId, data.moistureMin, data.moistureMax, data.minExternal, data.maxExternal, data.minInternal, data.maxInternal);
 	res.json(await sensors.saveSensorsConfigs());
+});
+
+app.post('/deletePlants', isAuthenticated, async (req, res) => {
+    let data = req.body;
+    let newPlant = new Plants();
+    let ids = req.body.map(Number);
+    res.json(await newPlant.deletePlants(ids));
 });
 
 app.listen(3000, () => {

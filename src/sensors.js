@@ -34,24 +34,11 @@ class Sensors extends Database
 			if(this.minMoisture == 0 || this.maxMoisture == 0 || this.minExternalTemperature == 0 || this.maxExternalTemperature == 0 || this.minInternalTemperature == 0 || this.maxInternalTemperature == 0)
 				throw new Error("\u{1FAE4}the sensors sets cannot be empty");
 
-			let query = "INSERT INTO moistureSensors (plantId, moistureDry, moistureWet) VALUES ($1, $2, $3);";
-			let values = [this.plantId, this.minMoisture, this.maxMoisture];
+			let query = "INSERT INTO sensors (plantId, moistureDry, moistureWet, maxExternalTemperature, minExternalTemperature, maxInternalTemperature, minInternalTemperature) VALUES ($1, $2, $3, $4, $5, $6, $7);";
+			let values = [this.plantId, this.minMoisture, this.maxMoisture, this.maxExternalTemperature, this.minExternalTemperature, this.maxInternalTemperature, this.minInternalTemperature];
 
 			let act = await this.executeQueryOnDataBase(query, values);
 
-			if(act.state === true)
-			{
-				query = "INSERT INTO externalTemperatureSensor (plantId, maxTemperature, minTemperature) VALUES ($1, $2, $3);"
-				values = [this.plantId, this.maxExternalTemperature, this.minExternalTemperature];
-				act = await this.executeQueryOnDataBase(query, values); 
-				
-				if(act.state === true)
-				{
-					query = "INSERT INTO internalTemperatureSensor (plantId, maxTemperature, minTemperature) VALUES ($1, $2, $3);";
-					values = [this.plantId, this.maxInternalTemperature, this.minInternalTemperature];
-					act = await this.executeQueryOnDataBase(query, values);
-				}
-			}
 
 			return new Promise((resolve, reject) => {
 				if(act.state === true)

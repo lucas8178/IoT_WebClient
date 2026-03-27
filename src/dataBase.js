@@ -45,9 +45,13 @@ class Database
             connection.query(query, values, (err, data) => {
                 connection.release();
                 if(err)
+                {
                     reject({state: false, error: err});
+                }
                 else
+                {
                     resolve({state: true, error: null});
+                }
             });
         });
     }

@@ -33,7 +33,8 @@ class Plants extends Database
     //This function registers the plant on the database
     async createPlant(name = '', imageLink = '', description = '', userId = 0, connected = false)
     {
-        try {
+        try 
+        {
             if(this.name === '')
             {
                 if(name === '')
@@ -80,6 +81,85 @@ class Plants extends Database
         }
     }
 
+    async deletePlants(ids)
+    {
+        if(ids !== [])
+        {
+            try
+            {
+                let query = "DELETE FROM plants WHERE ";
+                let toCat = "";
+                for(const [index, id] of ids.entries())
+                {
+                    if(toCat === "")
+                    {
+                        toCat = `id = $${index+1}`;
+                    } else
+                    {
+                        toCat = toCat + " " + `OR id = $${index+1}`;
+                    }
+                }
+
+                toCat = toCat + ";";
+
+                query = query + toCat;
+
+                console.log(ids);
+                console.log(query);
+
+                let act = await this.executeQueryOnDataBase(query, ids);
+
+                return new Promise((resolve, reject) => {
+                    if(act.state === true)
+                        resolve({state: true, error: null});
+                    else
+                        reject({state: false, error: act.error});
+                });
+            } catch(error)
+            {
+                console.error("An error occurred: ", error.message);
+                return {state: false, error: error.message};
+            }
+        }
+    }
+
+    async editPlants(name = '', imageLink = '', description = '', plantId = 0)
+    {
+        try
+        {
+            const queryBase = "UPDATE plants SET ";
+            let values = [name, imageLink, description, plantId];
+            let query = queryBase;
+            let i = 1;
+
+            let change = null;
+
+            query = query + `name = $${i}, `;
+            i++;
+
+            query = query + `imagelink = $${i}, `;
+            i++;
+
+            query = query + `description = $${i} `;
+            i++;
+
+            query = query + `WHERE id = $${i};`;
+
+            let act = await this.executeQueryOnDataBase(query, values);
+            
+            return new Promise((resolve, reject) => {
+                if(act.state === true)
+                    resolve({state: true, error: null});
+                else
+                    reject({state: false, error: act.error});
+            });
+        } catch(error)
+        {
+			console.error("An error occurred:", error.message);
+			return {state: false, error: error.message};
+        }
+    }
+
 	//this function finds the plants with a specified userId
 	async findUserPlants(userId = 0)
 	{
@@ -99,9 +179,14 @@ class Plants extends Database
 
 			return new Promise((resolve, reject) => {
 				if(plant.data && plant.data.length > 0)
+                {
 					resolve({state: true, data: plant.data});
+                }
 				else
+                {
+                    console.log("here\n");
 					reject({state: false, error: "\u{1FAE4}There're no plants registered by this user\n"});
+                }
 			});
 		} catch(error)
 		{

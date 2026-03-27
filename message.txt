@@ -1,0 +1,50 @@
+[11726.092132] usb usb1-port7: unable to enumerate USB device
+[11728.159974] usb usb1-port7: Cannot enable. Maybe the USB cable is bad?
+[11728.279936] usb 1-7: new full-speed USB device number 105 using xhci_hcd
+[11729.640016] usb usb1-port7: Cannot enable. Maybe the USB cable is bad?
+[11729.640157] usb usb1-port7: attempt power cycle
+[11731.008207] usb usb1-port7: Cannot enable. Maybe the USB cable is bad?
+[11732.364021] usb usb1-port7: Cannot enable. Maybe the USB cable is bad?
+[11732.364236] usb usb1-port7: unable to enumerate USB device
+[11733.999491] usb usb1-port7: Cannot enable. Maybe the USB cable is bad?
+[11735.355940] usb usb1-port7: Cannot enable. Maybe the USB cable is bad?
+[11735.355991] usb usb1-port7: attempt power cycle
+[11736.711928] usb usb1-port7: Cannot enable. Maybe the USB cable is bad?
+[11738.888008] usb usb1-port7: Cannot enable. Maybe the USB cable is bad?
+[11738.888201] usb usb1-port7: unable to enumerate USB device
+[11741.335968] usb usb1-port7: Cannot enable. Maybe the USB cable is bad?
+[11743.503835] usb usb1-port7: Cannot enable. Maybe the USB cable is bad?
+[11743.503887] usb usb1-port7: attempt power cycle
+[11745.331941] usb usb1-port7: Cannot enable. Maybe the USB cable is bad?
+[11745.451844] usb 1-7: new full-speed USB device number 115 using xhci_hcd
+[11745.451924] usb 1-7: Device not responding to setup address.
+[11745.655922] usb 1-7: Device not responding to setup address.
+[11745.859805] usb 1-7: device not accepting address 115, error -71
+[11745.859963] usb 1-7: WARN: invalid context state for evaluate context command.
+[11745.860110] usb usb1-port7: unable to enumerate USB device
+[11747.339912] usb usb1-port7: Cannot enable. Maybe the USB cable is bad?
+[11748.691914] usb usb1-port7: Cannot enable. Maybe the USB cable is bad?
+[11748.692108] usb usb1-port7: attempt power cycle
+[11750.519783] usb usb1-port7: Cannot enable. Maybe the USB cable is bad?
+[11750.639771] usb 1-7: new full-speed USB device number 119 using xhci_hcd
+[11750.639855] usb 1-7: Device not responding to setup address.
+[11750.843786] usb 1-7: Device not responding to setup address.
+[11751.051768] usb 1-7: device not accepting address 119, error -71
+[11751.051949] usb 1-7: WARN: invalid context state for evaluate context command.
+[11751.052067] usb usb1-port7: unable to enumerate USB device
+[11753.587828] usb usb1-port7: Cannot enable. Maybe the USB cable is bad?
+[11755.760166] usb usb1-port7: Cannot enable. Maybe the USB cable is bad?
+[11755.760374] usb usb1-port7: attempt power cycle
+[11757.591765] usb usb1-port7: Cannot enable. Maybe the USB cable is bad?
+[11757.711694] usb 1-7: new full-speed USB device number 123 using xhci_hcd
+[11757.711777] usb 1-7: Device not responding to setup address.
+[11757.915745] usb 1-7: Device not responding to setup address.
+[11758.119674] usb 1-7: device not accepting address 123, error -71
+[11758.119803] usb 1-7: WARN: invalid context state for evaluate context command.
+[11758.119944] usb usb1-port7: unable to enumerate USB device
+[11759.863693] usb usb1-port7: Cannot enable. Maybe the USB cable is bad?
+[11761.215693] usb usb1-port7: Cannot enable. Maybe the USB cable is bad?
+[11761.215870] usb usb1-port7: attempt power cycle
+[11763.043641] usb usb1-port7: Cannot enable. Maybe the USB cable is bad?
+[11763.163502] usb 1-7: new full-speed USB device number 127 using xhci_hcd
+[11763.163571] usb 1-7: Device not responding to setup address.
